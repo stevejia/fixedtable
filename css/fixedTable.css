@@ -91,8 +91,11 @@
         box-shadow: -2px 0 6px -2px rgba(0,0,0,.2);
     }
 
-.jx-table-overflowY, .jx-table-overflowX {
-    overflow: scroll;
+.jx-table-overflowY {
+    overflow-y: scroll;
+}
+.jx-table-overflowX{
+    overflow-x: scroll;
 }
 
 .jx-table-fixed-right-header {
@@ -103,7 +106,10 @@
     border-top: 1px solid #dcdee2;
     border-bottom: 1px solid #e8eaec;
 }
-
+.jx-table-fixed, .jx-table-fixed-right{
+    z-index: 3;
+    background: #ffffff;
+}
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
     padding: 4px 8px;
 }

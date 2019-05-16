@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/fixedTable.css" />
 </head>
+
 <body>
     <div class="box">
         <div class="box-body">
-            <div class="jx-table-wrapper" style="height: 200px; width: 550px;">
+            <!-- <div class="jx-table-wrapper" style="height: 200px; width: 550px;">
                 <div class="jx-table">
-                    <!-- not fixed table header-->
                     <div class="jx-table-header">
                         <table class="table table-bordered table-bover" style="width: 838px;">
                             <colgroup>
@@ -36,7 +37,6 @@
                             </thead>
                         </table>
                     </div>
-                    <!-- not fixed table body -->
                     <div class="jx-table-body jx-table-overflowY jx-table-overflowX" style="height: 170px;">
                         <table class="jx-table table table-bordered table-bover" style="width: 821px;">
                             <colgroup>
@@ -162,7 +162,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <!-- fixed table left columns -->
                     <div class="jx-table-fixed">
                         <div class="jx-table-fixed-header" style="width: 100px;">
                             <table class="table table-bordered table-hover" style="width: 838px;">
@@ -192,15 +191,7 @@
                         </div>
                         <div class="jx-table-fixed-body" style="width: 100px; height: 153px;">
                             <table class="jx-table table table-bordered table-bover" style="width: 821px;">
-                                <colgroup>
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="200">
-                                    <col width="100">
-                                    <col width="120">
-                                </colgroup>
+                                
                                 <tbody>
                                     <tr>
                                         <td>John Brown</td>
@@ -313,10 +304,18 @@
                                         <td class="jx-table-hidden">add</td>
                                     </tr>
                                 </tbody>
+                                <colgroup>
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="200">
+                                    <col width="100">
+                                    <col width="120">
+                                </colgroup>
                             </table>
                         </div>
                     </div>
-                    <!-- fixed table right columns -->
                     <div class="jx-table-fixed-right" style="width: 120px; right: 17px;">
                         <div class="jx-table-fixed-header" style="width: 120px;">
                             <table class="table table-bordered table-hover" style="width: 821px;right: 17px;">
@@ -471,12 +470,291 @@
                     </div>
                     <div class="jx-table-fixed-right-header" style="width: 17px;height: 100%;"></div>
                 </div>
-            </div>
+            </div> -->
+
+            <div style="height: 200px">
+                    <table class="table table-bordered table-bover" id="Demo">
+                        <thead>
+                            <tr>
+                                <th fixed="left" width="100">Column0</th>
+                                <th width="110">Column1</th>
+                                <th width="120">Column2</th>
+                                <th fixed="left" width="130">Column3</th>
+                                <th width="140">Column4</th>
+                                <th width="150">Column5</th>
+                                <th width="160">Column6</th>
+                                <th width="170">Column7</th>
+                                <th width="180">Column8</th>
+                                <th width="190">Column9</th>
+                                <th width="200">Column10</th>
+                                <th width="200">Column11</th>
+                                <th width="200">Column12</th>
+                                <th width="200">Column13</th>
+                                <th width="200">Column14</th>
+                                <th width="200">Column15</th>
+                                <th width="200">Column16</th>
+                                <th fixed="right" width="200">Column17</th>
+                                <th width="200">Column18</th>
+                                <th fixed="right" width="200">Column19</th>
+                            </tr>
+            
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Row0Column0</td>
+                                <td>Row0Column1</td>
+                                <td>Row0Column2</td>
+                                <td>Row0Column3</td>
+                                <td>Row0Column4</td>
+                                <td>Row0Column5</td>
+                                <td>Row0Column6</td>
+                                <td>Row0Column7</td>
+                                <td>Row0Column8</td>
+                                <td>Row0Column9</td>
+                                <td>Row0Column10</td>
+                                <td>Row0Column11</td>
+                                <td>Row0Column12</td>
+                                <td>Row0Column13</td>
+                                <td>Row0Column14</td>
+                                <td>Row0Column15</td>
+                                <td>Row0Column16</td>
+                                <td>Row0Column17</td>
+                                <td>Row0Column18</td>
+                                <td>Row0Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row1Column0</td>
+                                <td>Row1Column1</td>
+                                <td>Row1Column2</td>
+                                <td>Row1Column3</td>
+                                <td>Row1Column4</td>
+                                <td>Row1Column5</td>
+                                <td>Row1Column6</td>
+                                <td>Row1Column7</td>
+                                <td>Row1Column8</td>
+                                <td>Row1Column9</td>
+                                <td>Row1Column10</td>
+                                <td>Row1Column11</td>
+                                <td>Row1Column12</td>
+                                <td>Row1Column13</td>
+                                <td>Row1Column14</td>
+                                <td>Row1Column15</td>
+                                <td>Row1Column16</td>
+                                <td>Row1Column17</td>
+                                <td>Row1Column18</td>
+                                <td>Row1Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row2Column0</td>
+                                <td>Row2Column1</td>
+                                <td>Row2Column2</td>
+                                <td>Row2Column3</td>
+                                <td>Row2Column4</td>
+                                <td>Row2Column5</td>
+                                <td>Row2Column6</td>
+                                <td>Row2Column7</td>
+                                <td>Row2Column8</td>
+                                <td>Row2Column9</td>
+                                <td>Row2Column10</td>
+                                <td>Row2Column11</td>
+                                <td>Row2Column12</td>
+                                <td>Row2Column13</td>
+                                <td>Row2Column14</td>
+                                <td>Row2Column15</td>
+                                <td>Row2Column16</td>
+                                <td>Row2Column17</td>
+                                <td>Row2Column18</td>
+                                <td>Row2Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row3Column0</td>
+                                <td>Row3Column1</td>
+                                <td>Row3Column2</td>
+                                <td>Row3Column3</td>
+                                <td>Row3Column4</td>
+                                <td>Row3Column5</td>
+                                <td>Row3Column6</td>
+                                <td>Row3Column7</td>
+                                <td>Row3Column8</td>
+                                <td>Row3Column9</td>
+                                <td>Row3Column10</td>
+                                <td>Row3Column11</td>
+                                <td>Row3Column12</td>
+                                <td>Row3Column13</td>
+                                <td>Row3Column14</td>
+                                <td>Row3Column15</td>
+                                <td>Row3Column16</td>
+                                <td>Row3Column17</td>
+                                <td>Row3Column18</td>
+                                <td>Row3Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row4Column0</td>
+                                <td>Row4Column1</td>
+                                <td>Row4Column2</td>
+                                <td>Row4Column3</td>
+                                <td>Row4Column4</td>
+                                <td>Row4Column5</td>
+                                <td>Row4Column6</td>
+                                <td>Row4Column7</td>
+                                <td>Row4Column8</td>
+                                <td>Row4Column9</td>
+                                <td>Row4Column10</td>
+                                <td>Row4Column11</td>
+                                <td>Row4Column12</td>
+                                <td>Row4Column13</td>
+                                <td>Row4Column14</td>
+                                <td>Row4Column15</td>
+                                <td>Row4Column16</td>
+                                <td>Row4Column17</td>
+                                <td>Row4Column18</td>
+                                <td>Row4Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row5Column0</td>
+                                <td>Row5Column1</td>
+                                <td>Row5Column2</td>
+                                <td>Row5Column3</td>
+                                <td>Row5Column4</td>
+                                <td>Row5Column5</td>
+                                <td>Row5Column6</td>
+                                <td>Row5Column7</td>
+                                <td>Row5Column8</td>
+                                <td>Row5Column9</td>
+                                <td>Row5Column10</td>
+                                <td>Row5Column11</td>
+                                <td>Row5Column12</td>
+                                <td>Row5Column13</td>
+                                <td>Row5Column14</td>
+                                <td>Row5Column15</td>
+                                <td>Row5Column16</td>
+                                <td>Row5Column17</td>
+                                <td>Row5Column18</td>
+                                <td>Row5Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row6Column0</td>
+                                <td>Row6Column1</td>
+                                <td>Row6Column2</td>
+                                <td>Row6Column3</td>
+                                <td>Row6Column4</td>
+                                <td>Row6Column5</td>
+                                <td>Row6Column6</td>
+                                <td>Row6Column7</td>
+                                <td>Row6Column8</td>
+                                <td>Row6Column9</td>
+                                <td>Row6Column10</td>
+                                <td>Row6Column11</td>
+                                <td>Row6Column12</td>
+                                <td>Row6Column13</td>
+                                <td>Row6Column14</td>
+                                <td>Row6Column15</td>
+                                <td>Row6Column16</td>
+                                <td>Row6Column17</td>
+                                <td>Row6Column18</td>
+                                <td>Row6Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row7Column0</td>
+                                <td>Row7Column1</td>
+                                <td>Row7Column2</td>
+                                <td>Row7Column3</td>
+                                <td>Row7Column4</td>
+                                <td>Row7Column5</td>
+                                <td>Row7Column6</td>
+                                <td>Row7Column7</td>
+                                <td>Row7Column8</td>
+                                <td>Row7Column9</td>
+                                <td>Row7Column10</td>
+                                <td>Row7Column11</td>
+                                <td>Row7Column12</td>
+                                <td>Row7Column13</td>
+                                <td>Row7Column14</td>
+                                <td>Row7Column15</td>
+                                <td>Row7Column16</td>
+                                <td>Row7Column17</td>
+                                <td>Row7Column18</td>
+                                <td>Row7Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row8Column0</td>
+                                <td>Row8Column1</td>
+                                <td>Row8Column2</td>
+                                <td>Row8Column3</td>
+                                <td>Row8Column4</td>
+                                <td>Row8Column5</td>
+                                <td>Row8Column6</td>
+                                <td>Row8Column7</td>
+                                <td>Row8Column8</td>
+                                <td>Row8Column9</td>
+                                <td>Row8Column10</td>
+                                <td>Row8Column11</td>
+                                <td>Row8Column12</td>
+                                <td>Row8Column13</td>
+                                <td>Row8Column14</td>
+                                <td>Row8Column15</td>
+                                <td>Row8Column16</td>
+                                <td>Row8Column17</td>
+                                <td>Row8Column18</td>
+                                <td>Row8Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row9Row8Column0</td>
+                                <td>Row9Column1</td>
+                                <td>Row9Column2</td>
+                                <td>Row9Column3</td>
+                                <td>Row9Column4</td>
+                                <td>Row9Column5</td>
+                                <td>Row9Column6</td>
+                                <td>Row9Column7</td>
+                                <td>Row9Column8</td>
+                                <td>Row9Column9</td>
+                                <td>Row9Column10</td>
+                                <td>Row9Column11</td>
+                                <td>Row9Column12</td>
+                                <td>Row9Column13</td>
+                                <td>Row9Column14</td>
+                                <td>Row9Column15</td>
+                                <td>Row9Column16</td>
+                                <td>Row9Column17</td>
+                                <td>Row9Column18</td>
+                                <td>Row9Column19</td>
+                            </tr>
+                            <tr>
+                                <td>Row10Column0</td>
+                                <td>Row10Column1</td>
+                                <td>Row10Column2</td>
+                                <td>Row10Column3</td>
+                                <td>Row10Column4</td>
+                                <td>Row10Column5</td>
+                                <td>Row10Column6</td>
+                                <td>Row10Column7</td>
+                                <td>Row10Column8</td>
+                                <td>Row10Column9</td>
+                                <td>Row10Column10</td>
+                                <td>Row10Column11</td>
+                                <td>Row10Column12</td>
+                                <td>Row10Column13</td>
+                                <td>Row10Column14</td>
+                                <td>Row10Column15</td>
+                                <td>Row10Column16</td>
+                                <td>Row10Column17</td>
+                                <td>Row10Column18</td>
+                                <td>Row10Column19</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
         </div>
     </div>
+    
+
+
     <script type="text/javascript" src="assets/scripts/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="assets/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/fixedTable.js"></script>
     <script type="text/javascript">
+        $("#Demo").fixedTable();
         var overflowyEl = document.querySelector(".jx-table-overflowY");
         var overflowxEl = document.querySelector(".jx-table-overflowX");
 
@@ -496,11 +774,5 @@
                 overflowHeader.scrollLeft = overflowxEl.scrollLeft;
             });
         }
-
     </script>
 </body>
-
-
-
-
-
