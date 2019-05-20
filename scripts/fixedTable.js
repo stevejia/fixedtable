@@ -3,7 +3,7 @@
     function FixedTable() {
         var self = this;
         var tableClasses = {
-            fixedLeftHeader: 'jx-table-fixed-header',
+            fixedLeftHeader: 'qc-table-fixed-header',
             fixedLeftBody: ''
         }
         var _methods = {
@@ -13,7 +13,7 @@
             _render: function () {
                 var element = self.element;
                 var $element = $(element);
-
+				$element.removeClass('hide')
                 var headerDic = self._classifyHeaders($element);
 
                 self._reRenderElement($element, headerDic);
@@ -91,12 +91,12 @@
                 self.containerHeight = $element.parent().height();
                 console.log(self.containerHeight);
 
-                //用jx-table包含table
-                $element.wrapAll('<div class="jx-table"></div>');
+                //用qc-table包含table
+                $element.wrapAll('<div class="qc-table"></div>');
                 var $jxTable = $element.parent();
 
-                //用jx-table-wrapper包含jx-table
-                $jxTable.wrapAll('<div class="jx-table-wrapper"></div>');
+                //用qc-table-wrapper包含qc-table
+                $jxTable.wrapAll('<div class="qc-table-wrapper"></div>');
                 var leftHeaders = headerDic['left'];
                 var rightHeaders = headerDic['right'];
                 var nofixedHeader = headerDic['none'];
@@ -110,7 +110,8 @@
                 if (rightHeaders.length) {
                     self._renderFixedRightTable($element, $jxTable, rightHeaders);
                 }
-                $element.remove();
+                //$element.remove();
+				$element.addClass('hide');
                 self._registerScrollEvents($jxTable);
 
             },
@@ -122,9 +123,9 @@
                 $headerTable.find('tbody').remove();
                 var $bodyTable = $element.clone();
                 $bodyTable.find('thead').remove();
-                $headerTable.wrapAll('<div class="jx-table-header"></div>');
+                $headerTable.wrapAll('<div class="qc-table-header"></div>');
                 $jxTable.append($headerTable.parent());
-                $bodyTable.wrapAll('<div class="jx-table-body jx-table-overflowY jx-table-overflowX"></div>');
+                $bodyTable.wrapAll('<div class="qc-table-body qc-table-overflowY qc-table-overflowX"></div>');
                 $jxTable.append($bodyTable.parent());
                 self._renderTable($headerTable, $bodyTable, headerIndexes);
             },
@@ -134,11 +135,11 @@
                 $headerTable.find('tbody').remove();
                 var $bodyTable = $table.clone();
                 $bodyTable.find('thead').remove();
-                $headerTable.wrapAll('<div class="jx-table-fixed-header"></div>')
+                $headerTable.wrapAll('<div class="qc-table-fixed-header"></div>')
                 var $headerParent = $headerTable.parent();
-                $headerParent.wrapAll('<div class="jx-table-fixed"></div>')
+                $headerParent.wrapAll('<div class="qc-table-fixed"></div>')
                 $fixedContainer = $headerParent.parent();
-                $bodyTable.wrapAll('<div class="jx-table-fixed-body"></div>')
+                $bodyTable.wrapAll('<div class="qc-table-fixed-body"></div>')
                 $fixedContainer.append($bodyTable.parent());
                 $jxTable.append($fixedContainer);
                 self._renderTable($headerTable, $bodyTable, headers, true);
@@ -148,11 +149,11 @@
                 $headerTable.find('tbody').remove();
                 var $bodyTable = $table.clone();
                 $bodyTable.find('thead').remove();
-                $headerTable.wrapAll('<div class="jx-table-fixed-header"></div>')
+                $headerTable.wrapAll('<div class="qc-table-fixed-header"></div>')
                 var $headerParent = $headerTable.parent();
-                $headerParent.wrapAll('<div class="jx-table-fixed-right"></div>')
+                $headerParent.wrapAll('<div class="qc-table-fixed-right"></div>')
                 $fixedContainer = $headerParent.parent();
-                $bodyTable.wrapAll('<div class="jx-table-fixed-body"></div>')
+                $bodyTable.wrapAll('<div class="qc-table-fixed-body"></div>')
                 $fixedContainer.append($bodyTable.parent());
                 $jxTable.append($fixedContainer);
                 self._renderTable($headerTable, $bodyTable, headers, true, true);
@@ -180,7 +181,7 @@
                         rowWidth += +(colWidth || 0);
                         var index = +$col.attr('index')
                         if (headers.indexOf(index) === -1) {
-                            $col.addClass('jx-table-hidden');
+                            $col.addClass('qc-table-hidden');
                         } else {
                             parenWidth += parseInt(colWidth);
                             if (right) {
@@ -191,7 +192,7 @@
                     });
                     $bodyColGroup = $colGroup.clone();
                     if (isOverflowY) {
-                        $row.append('<th class="jx-table-hidden" width="17" rowspan="1"></th>');
+                        $row.append('<th class="qc-table-hidden" width="17" rowspan="1"></th>');
                         $colGroup.append($('<col width="17" class="for-scroll"></col>'))
                         rowWidth += 17;
                     }
@@ -205,7 +206,7 @@
                         var nofixedGroupCols = [];
                         $row.empty();
                         $.each($cols, function (i, col) {
-                            if ($(col).hasClass('jx-table-hidden')) {
+                            if ($(col).hasClass('qc-table-hidden')) {
                                 hiddenCols.push(col);
                                 nofixedGroupCols.push($children.eq(i));
                             } else {
@@ -231,32 +232,32 @@
                         var $col = $(col);
                         var index = parseInt($col.attr('index'));
                         if (headers.indexOf(index) === -1) {
-                            $col.addClass('jx-table-hidden');
+                            $col.addClass('qc-table-hidden');
                         }
                     });
                     if (right) {
                         var fixedCols = [];
                         var hiddenCols = [];
-                        var $cloneRow = $row.clone();
+                        // var $cloneRow = $row.clone();
                         $row.empty();
-                        var $cloneGroup = $colGroup.clone();
-                        $colGroup.empty();
-                        var $children = $cloneGroup.children();
-                        var fixedGroupCols = [];
-                        var nofixedGroupCols = [];
+                        // var $cloneGroup = $colGroup.clone();
+                        // $colGroup.empty();
+                        // var $children = $cloneGroup.children();
+                        // var fixedGroupCols = [];
+                        // var nofixedGroupCols = [];
                         $.each($cols, function (i, col) {
-                            if ($(col).hasClass('jx-table-hidden')) {
+                            if ($(col).hasClass('qc-table-hidden')) {
                                 hiddenCols.push(col);
-                                nofixedGroupCols.push($children.eq(i));
+                                // nofixedGroupCols.push($children.eq(i));
                             } else {
                                 fixedCols.push(col);
-                                fixedGroupCols.push($children.eq(i));
+                                // fixedGroupCols.push($children.eq(i));
                             }
                         });
                         var newCols = fixedCols.concat(hiddenCols);
                         $row.append(newCols);
-                        var newGroupCols = fixedGroupCols.concat(nofixedGroupCols);
-                        $colGroup.append(newGroupCols);
+                        // var newGroupCols = fixedGroupCols.concat(nofixedGroupCols);
+                        // $colGroup.append(newGroupCols);
                     }
                 })
 
@@ -272,14 +273,14 @@
                 } else {
 
                     if (isOverflowX) {
-                        $bodyTable.parent().addClass('jx-table-overflowX')
+                        $bodyTable.parent().addClass('qc-table-overflowX')
                     } else {
-                        $bodyTable.parent().removeClass('jx-table-overflowX')
+                        $bodyTable.parent().removeClass('qc-table-overflowX')
                     }
                     if (isOverflowY) {
-                        $bodyTable.parent().addClass('jx-table-overflowY')
+                        $bodyTable.parent().addClass('qc-table-overflowY')
                     } else {
-                        $bodyTable.parent().removeClass('jx-table-overflowY')
+                        $bodyTable.parent().removeClass('qc-table-overflowY')
                     }
                 }
 
@@ -292,19 +293,19 @@
                     }
                     $bodyTable.parent().css('height', calcedHeight);
 
-                    $bodyTable.closest('.jx-table').append('<div class="jx-table-fixed-right-header" style="width: 17px;height: 100%;"></div>');
+                    $bodyTable.closest('.qc-table').append('<div class="qc-table-fixed-right-header" style="width: 17px;height: 100%;"></div>');
                 }
 
                 if (right) {
-                    $headerTable.closest('.jx-table-fixed-right').css('right', 17)
+                    $headerTable.closest('.qc-table-fixed-right').css('right', 17)
                 }
             },
             _registerScrollEvents: function ($jxTable) {
-                var overflowyEl = $jxTable.find(".jx-table-overflowY")[0];
-                var overflowxEl =$jxTable.find(".jx-table-overflowX")[0];
-                var overflowHeader = $jxTable.find(".jx-table-header")[0];
-                var overflowLeft = $jxTable.find(".jx-table-fixed .jx-table-fixed-body")[0];
-                var overfowRight = $jxTable.find(".jx-table-fixed-right .jx-table-fixed-body")[0];
+                var overflowyEl = $jxTable.find(".qc-table-overflowY")[0];
+                var overflowxEl =$jxTable.find(".qc-table-overflowX")[0];
+                var overflowHeader = $jxTable.find(".qc-table-header")[0];
+                var overflowLeft = $jxTable.find(".qc-table-fixed .qc-table-fixed-body")[0];
+                var overfowRight = $jxTable.find(".qc-table-fixed-right .qc-table-fixed-body")[0];
                 if (overflowyEl) {
                     overflowyEl.addEventListener("scroll", function () {
                         overflowLeft.scrollTop = overflowyEl.scrollTop;
